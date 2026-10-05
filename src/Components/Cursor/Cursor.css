@@ -1,0 +1,19 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 13px;
+  height: 13px;
+
+  background: #110301;
+  border: 1.5px solid #f4f1ea;
+  border-radius: 50%;
+
+  pointer-events: none;
+  z-index: 9999;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.15);
+}

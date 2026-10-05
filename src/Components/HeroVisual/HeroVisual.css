@@ -1,0 +1,204 @@
+.hero-visual {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+
+  right: 2%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main orbit */
+.hero-orbit {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 50%;
+}
+
+/* First orbit */
+.hero-orbit-one {
+  transform: rotate(25deg) scaleY(0.55);
+  animation: orbitRotate 18s linear infinite;
+}
+
+/* Second orbit */
+.hero-orbit-two {
+  transform: rotate(-35deg) scaleY(0.55);
+  animation: orbitRotateReverse 24s linear infinite;
+}
+
+/* Soft center glow */
+.hero-glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(140, 210, 170, 0.65) 0%,
+      rgba(140, 210, 170, 0.3) 30%,
+      rgba(140, 210, 170, 0.08) 55%,
+      transparent 75%
+    );
+
+  filter: blur(55px);
+
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Orbit animations */
+@keyframes orbitRotate {
+  from {
+    transform: rotate(25deg) scaleY(0.55);
+  }
+
+  to {
+    transform: rotate(385deg) scaleY(0.55);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: rotate(-35deg) scaleY(0.55);
+  }
+
+  to {
+    transform: rotate(-395deg) scaleY(0.55);
+  }
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.12);
+    opacity: 0.9;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-visual {
+    width: 350px;
+    height: 350px;
+
+    right: -80px;
+    top: 55%;
+
+    opacity: 0.6;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-visual {
+    width: 280px;
+    height: 280px;
+
+    right: -90px;
+    top: 58%;
+  }
+}
+.orbit-dot {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  top: 50%;
+  left: 0;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #111;
+
+  box-shadow:
+    0 0 12px rgba(17, 17, 17, 0.35),
+    0 0 30px rgba(140, 210, 170, 0.5);
+
+  animation: dotMove 18s linear infinite;
+}
+
+.orbit-dot-two {
+  width: 9px;
+  height: 9px;
+
+  left: 100%;
+
+  animation: dotMoveReverse 24s linear infinite;
+}
+
+@keyframes dotMove {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes dotMoveReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes dotGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 1;
+  }
+}
+.hero-visual::before {
+  content: '';
+
+  position: absolute;
+  inset: 22%;
+
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 50%;
+
+  animation: innerRing 12s linear infinite;
+}
+
+@keyframes innerRing {
+  from {
+    transform: rotate(0deg) scaleX(0.7);
+  }
+
+  to {
+    transform: rotate(360deg) scaleX(0.7);
+  }
+}

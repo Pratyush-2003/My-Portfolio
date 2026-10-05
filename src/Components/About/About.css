@@ -1,0 +1,132 @@
+.about {
+  min-height: 100vh;
+  padding: 100px 40px;
+  background: #111111;
+  color: #f4f1ea;
+}
+
+.about-top {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 140px auto 0;
+
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.about h2 {
+  font-size: clamp(4rem, 9vw, 9rem);
+  line-height: 0.84;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+}
+
+.about-text {
+  max-width: 380px;
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 2;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 20px;
+  }
+
+  .about-content {
+    margin-top: 100px;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about h2 {
+    font-size: clamp(3.5rem, 16vw, 6rem);
+  }
+}
+.about-title {
+  overflow: hidden;
+}
+
+.about-title span {
+  display: block;
+  transform: translateY(100%);
+}
+.about-marquee {
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 0;
+
+  overflow: hidden;
+
+  border-top: 1px solid rgba(244, 241, 234, 0.12);
+  border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+
+  padding: 20px 0;
+}
+.about-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+
+  animation: aboutMarquee 25s linear infinite;
+}
+
+.about-skill-card {
+  min-width: 220px;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #171717;
+  border-radius: 12px;
+
+  color: #f4f1ea;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+
+  border: 1px solid rgba(244, 241, 234, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.about-skill-card:hover {
+  transform: translateY(-5px);
+  background: #202020;
+}
+
+@keyframes aboutMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
